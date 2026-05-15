@@ -549,3 +549,142 @@ footer{
   background:#9900ff;
   box-shadow:0 0 20px #9900ff;
 }
+/* =========================
+   DISCORD ROLE PAGE
+========================= */
+
+.discord-roles{
+  min-height:100vh;
+  padding:100px 8%;
+}
+
+.role-list{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  margin-top:40px;
+  max-width:850px;
+}
+
+/* ROLE CARD */
+
+.discord-role{
+  display:flex;
+  align-items:center;
+  gap:18px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  border-radius:18px;
+
+  padding:20px;
+
+  transition:0.3s;
+
+  backdrop-filter:blur(10px);
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.discord-role::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  width:5px;
+  height:100%;
+
+  background:currentColor;
+}
+
+.discord-role:hover{
+  transform:translateX(10px);
+
+  box-shadow:
+  0 0 20px currentColor;
+}
+
+/* DOT */
+
+.dot{
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:currentColor;
+
+  box-shadow:
+  0 0 15px currentColor;
+}
+
+/* INFO */
+
+.role-info h2{
+  font-size:1.3rem;
+  margin-bottom:5px;
+}
+
+.role-info p{
+  opacity:0.7;
+  font-size:0.95rem;
+}
+
+/* COLORS */
+
+.gold{
+  color:#f5c542;
+}
+
+.pink{
+  color:#ff2d7a;
+}
+
+.purple{
+  color:#a855f7;
+}
+
+.blue{
+  color:#2ea6ff;
+}
+
+.green{
+  color:#30d17b;
+}
+
+.yellow{
+  color:#eab308;
+}
+
+.olive{
+  color:#808000;
+}
+
+.cyan{
+  color:#14b8a6;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .discord-role{
+    padding:16px;
+  }
+
+  .role-info h2{
+    font-size:1rem;
+  }
+
+  .role-info p{
+    font-size:0.85rem;
+  }
+
+}
