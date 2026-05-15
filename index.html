@@ -1,208 +1,191 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Freddy Nát Team | FNAF Bựa Nhất Hành Tinh</title>
-  <!-- Font Awesome CDN (icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Font: Kiểu gaming + VHS -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Freddy Nát Team</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- Particle Canvas nền (hiệu ứng bụi ma quái) -->
-  <canvas id="particle-canvas"></canvas>
+  <!-- Scanline Overlay -->
+  <div class="scanlines"></div>
 
-  <!-- Lớp hiệu ứng VHS / Scanline & TV Noise (phủ toàn màn hình) -->
-  <div class="scanline-overlay"></div>
-  <div class="vhs-noise"></div>
+  <!-- Particle Background -->
+  <div id="particles"></div>
 
-  <!-- HEADER lớn + Logo chính -->
-  <header class="hero-header">
-    <div class="header-content">
-      <div class="logo-area" id="secret-logo">
-        <h1 class="glitch-text" data-text="FREDDY NÁT TEAM">FREDDY NÁT TEAM</h1>
-        <div class="fake-logo-glow"></div>
+  <!-- HEADER -->
+  <header class="header" id="home">
+
+    <!-- Glitch Background -->
+    <div class="tv-noise"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo glitch" id="logo" data-text="Freddy Nát Team">
+        Freddy Nát Team
       </div>
-      <p class="subtitle">⚡ FNAF BỰA NHẤT HÀNH TINH ⚡</p>
-      <div class="header-noise"></div>
-    </div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Trang Chủ</a></li>
+        <li><a href="#members">Thành Viên</a></li>
+        <li><a href="#videos">Video</a></li>
+        <li><a href="#memes">Meme</a></li>
+        <li><a href="#footer">Liên Hệ</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero fade-section">
+      <h1 class="glitch hero-title" data-text="FNAF Bựa Nhất Hành Tinh">
+        FNAF Bựa Nhất Hành Tinh
+      </h1>
+
+      <p>
+        Chúng tôi tạo FNAF animation bựa nhất vũ trụ 💀
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#videos" class="btn neon-btn">
+          Xem Video
+        </a>
+
+        <a href="#members" class="btn outline-btn">
+          Gia Nhập Team
+        </a>
+      </div>
+    </section>
+
   </header>
 
-  <!-- Thanh Navbar (Sticky, cuộn mượt) -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="#home" class="nav-link">🏠 Trang Chủ</a>
-      <a href="#members" class="nav-link">👥 Thành Viên</a>
-      <a href="#videos" class="nav-link">🎬 Video</a>
-      <a href="#memes" class="nav-link">🤣 Meme</a>
-      <a href="#contact" class="nav-link">📞 Liên Hệ</a>
+  <!-- MEMBERS -->
+  <section class="members fade-section" id="members">
+
+    <h2 class="section-title">THÀNH VIÊN</h2>
+
+    <div class="member-grid">
+
+      <div class="member-card">
+        <div class="avatar">😈</div>
+        <h3>Night Freddy</h3>
+        <p>Editor</p>
+      </div>
+
+      <div class="member-card">
+        <div class="avatar">🤡</div>
+        <h3>Bonnie Lag</h3>
+        <p>Animator</p>
+      </div>
+
+      <div class="member-card">
+        <div class="avatar">💀</div>
+        <h3>Chica Meme</h3>
+        <p>Voice Actor</p>
+      </div>
+
+      <div class="member-card">
+        <div class="avatar">🔥</div>
+        <h3>Foxxy Nát</h3>
+        <p>Meme Creator</p>
+      </div>
+
     </div>
-  </nav>
 
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="section fade-in">
-      <div class="container hero-container">
-        <div class="hero-text neon-box">
-          <h2 class="hero-glitch">Chúng tôi tạo FNAF animation <br> bựa nhất vũ trụ 🎭</h2>
-          <div class="hero-buttons">
-            <button class="btn btn-neon" id="watchVideoBtn">🎥 Xem Video</button>
-            <button class="btn btn-neon-purple" id="joinTeamBtn">🤝 Gia Nhập Team</button>
-          </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="videos fade-section" id="videos">
+
+    <h2 class="section-title">VIDEO BỰA</h2>
+
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="thumbnail">
+          <span>▶</span>
         </div>
+        <h3>Freddy bị mất wifi lúc jumpscare</h3>
       </div>
-    </section>
 
-    <!-- Thành Viên Section (4 cards) -->
-    <section id="members" class="section fade-in">
-      <div class="container">
-        <h2 class="section-title"><i class="fas fa-user-astronaut"></i> THÀNH VIÊN NÁT <i class="fas fa-skull"></i></h2>
-        <div class="members-grid">
-          <!-- Card 1: Editor -->
-          <div class="member-card">
-            <div class="avatar-circle">
-              <i class="fas fa-cut"></i>
-            </div>
-            <h3>Khoai Nát</h3>
-            <p class="role">📽️ Editor</p>
-            <p class="bio">"Cắt ghép rén ngang cơm"</p>
-            <div class="card-neon-border"></div>
-          </div>
-          <!-- Card 2: Animator -->
-          <div class="member-card">
-            <div class="avatar-circle">
-              <i class="fas fa-dragon"></i>
-            </div>
-            <h3>Bảnh Bao</h3>
-            <p class="role">🎨 Animator</p>
-            <p class="bio">"Tạo chuyển động nát nhất quả đất"</p>
-            <div class="card-neon-border"></div>
-          </div>
-          <!-- Card 3: Voice Actor -->
-          <div class="member-card">
-            <div class="avatar-circle">
-              <i class="fas fa-microphone-alt"></i>
-            </div>
-            <h3>Mèo Ngu</h3>
-            <p class="role">🎙️ Voice Actor</p>
-            <p class="bio">"Lồng tiếng cười ra nước mắt"</p>
-            <div class="card-neon-border"></div>
-          </div>
-          <!-- Card 4: Meme Creator -->
-          <div class="member-card">
-            <div class="avatar-circle">
-              <i class="fas fa-laugh-squint"></i>
-            </div>
-            <h3>Phở Chua</h3>
-            <p class="role">🔥 Meme Creator</p>
-            <p class="bio">"Thả thính bằng ảnh chế FNAF"</p>
-            <div class="card-neon-border"></div>
-          </div>
+      <div class="video-card">
+        <div class="thumbnail">
+          <span>▶</span>
         </div>
+        <h3>Bonnie chơi Free Fire lúc trực đêm</h3>
       </div>
-    </section>
 
-    <!-- Video Section (kiểu YouTube card) -->
-    <section id="videos" class="section fade-in">
-      <div class="container">
-        <h2 class="section-title"><i class="fab fa-youtube"></i> VIDEO BỰA HÀI <i class="fas fa-tv"></i></h2>
-        <div class="video-grid">
-          <div class="video-card">
-            <div class="video-thumb">
-              <i class="fab fa-youtube"></i>
-              <span class="play-icon"><i class="fas fa-play"></i></span>
-            </div>
-            <div class="video-info">
-              <h3>Freddy gặp Cốm 🍕</h3>
-              <p>100k views • bựa gấp 3</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-thumb">
-              <i class="fas fa-ghost"></i>
-              <span class="play-icon"><i class="fas fa-play"></i></span>
-            </div>
-            <div class="video-info">
-              <h3>Springtrap nhảy nhót</h3>
-              <p>69k views • nát nhất TikTok</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-thumb">
-              <i class="fas fa-pizza-slice"></i>
-              <span class="play-icon"><i class="fas fa-play"></i></span>
-            </div>
-            <div class="video-info">
-              <h3>FNAF nhưng mà Anime</h3>
-              <p>200k views • gây bão meme</p>
-            </div>
-          </div>
+      <div class="video-card">
+        <div class="thumbnail">
+          <span>▶</span>
         </div>
+        <h3>Springtrap đi sửa quạt</h3>
       </div>
-    </section>
 
-    <!-- Meme Section (Grid meme rung khi hover) -->
-    <section id="memes" class="section fade-in">
-      <div class="container">
-        <h2 class="section-title"><i class="fas fa-image"></i> MEME CỰC NÁT <i class="fas fa-dizzy"></i></h2>
-        <div class="meme-grid">
-          <div class="meme-card">
-            <div class="meme-content">
-              <i class="fas fa-freddy-face"></i>
-              <p>"Khi code web không có bug"</p>
-              <span>😭 Freddy khóc</span>
-            </div>
-          </div>
-          <div class="meme-card">
-            <div class="meme-content">
-              <i class="fas fa-chalkboard-user"></i>
-              <p>"Team họp lúc 2h sáng"</p>
-              <span>🔪 nát thật sự</span>
-            </div>
-          </div>
-          <div class="meme-card">
-            <div class="meme-content">
-              <i class="fas fa-battery-empty"></i>
-              <p>"Pin điện thoại y như FNAF 1"</p>
-              <span>⚡ 0% 💀</span>
-            </div>
-          </div>
-          <div class="meme-card">
-            <div class="meme-content">
-              <i class="fas fa-drumstick-bite"></i>
-              <p>"Pizza của tôi đâu rồi?"</p>
-              <span>🍕 Freddy nổi điên</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer + Liên Hệ (Discord, YouTube, GitHub) -->
-  <footer id="contact" class="footer">
-    <div class="container footer-content">
-      <div class="footer-logo">
-        <h3 class="glitch-mini">FREDDY NÁT TEAM</h3>
-        <p>Animation bựa - Meme chất độc</p>
-      </div>
-      <div class="footer-links">
-        <a href="#" class="social-icon" aria-label="Discord"><i class="fab fa-discord"></i> Discord</a>
-        <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i> GitHub</a>
-      </div>
-      <div class="copyright">
-        <p>© 2025 Freddy Nát Team | Nát nhưng ngầu, FNAF Meme GenZ</p>
-      </div>
     </div>
+
+  </section>
+
+  <!-- MEMES -->
+  <section class="memes fade-section" id="memes">
+
+    <h2 class="section-title">MEME KHU VỰC 💀</h2>
+
+    <div class="meme-grid">
+
+      <div class="meme-card">🗿 Freddy khi mất điện</div>
+
+      <div class="meme-card">💀 Chica ăn RAM máy tính</div>
+
+      <div class="meme-card">🔥 Foxy chạy bằng ping 999</div>
+
+      <div class="meme-card">🤡 Bonnie render 9 tiếng crash</div>
+
+      <div class="meme-card">👁️ Springtrap nhìn deadline</div>
+
+      <div class="meme-card">📺 VHS Horror Moment</div>
+
+    </div>
+
+  </section>
+
+  <!-- SECRET MESSAGE -->
+  <div id="secret-message">
+    Freddy đã bị nát 💀
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+
+    <div class="socials">
+
+      <a href="#">
+        <i class="fab fa-discord"></i>
+      </a>
+
+      <a href="#">
+        <i class="fab fa-youtube"></i>
+      </a>
+
+      <a href="#">
+        <i class="fab fa-github"></i>
+      </a>
+
+    </div>
+
+    <p>
+      © 2026 Freddy Nát Team
+    </p>
+
   </footer>
 
-  <!-- Toast thông báo Easter egg -->
-  <div id="easterToast" class="easter-toast">Freddy đã bị nát 💀</div>
-
+  <!-- JAVASCRIPT -->
   <script src="script.js"></script>
+
 </body>
 </html>
